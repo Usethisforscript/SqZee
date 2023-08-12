@@ -1,0 +1,143 @@
+local kavoUi = loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
+local window = kavoUi.CreateLib("Lucky Block Script","BloodTheme")
+ 
+---Hi
+ 
+local Tab1 = window:NewTab("Main")
+local Tab1Section = Tab1:NewSection("Speed")
+ 
+--
+ 
+Tab1Section:NewButton("Speed - 50","LikeAndSubscribe",function()
+ 
+local WalkSpeed = 50
+ 
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 50
+ 
+end)
+
+
+Tab1Section:NewButton("Speed - 100","LikeAndSubscribe",function()
+ 
+local WalkSpeed = 100
+ 
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 100
+ 
+end)
+
+
+local Tab1Section = Tab1:NewSection("Jump")
+ 
+--
+
+Tab1Section:NewButton("Jump - 50","LikeAndSubscribe",function()
+ 
+local JumpPower = 50
+ 
+game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+ 
+end)
+
+
+Tab1Section:NewButton("Jump - 100","LikeAndSubscribe",function()
+ 
+local JumpPower = 100
+ 
+game.Players.LocalPlayer.Character.Humanoid.JumpPower = 100
+ 
+end)
+
+
+local Tab1Section = Tab1:NewSection("Lucky Box")
+ 
+--
+
+Tab1Section:NewButton("Open Rainbow Lucky Box","LikeAndSubscribe",function()
+   game:GetService("ReplicatedStorage"):WaitForChild("SpawnRainbowBlock"):FireServer()
+
+end)
+
+
+local Tab1Section = Tab1:NewSection("Other")
+
+--
+
+Tab1Section:NewButton("Hitbox","LikeAndSubscribe",function()
+   local ScreenGui = Instance.new("ScreenGui")
+local main = Instance.new("Frame")
+local label = Instance.new("TextLabel")
+local Hitbox = 
+Instance.new("TextButton")
+ 
+ScreenGui.Parent = game.CoreGui
+ 
+main.Name = "main"
+main.Parent = ScreenGui
+main.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+main.Position = UDim2.new(0.40427351, 0, 0.34591195, 0)
+main.Size = UDim2.new(0, 100, 0, 100)
+main.Active = true
+main.Draggable = true
+ 
+label.Name = "label"
+label.Parent = main
+label.BackgroundColor3 = Color3.fromRGB(139,0,0)
+label.Size = UDim2.new(0, 100, 0, 20)
+label.Font = Enum.Font.SourceSans
+label.Text = "Hitbox Gui"
+label.TextColor3 = Color3.fromRGB(0, 0, 0)
+label.TextScaled = true
+label.TextSize = 5.000
+label.TextWrapped = true
+ 
+Hitbox.Name = "Hitbox"
+Hitbox.Parent = main
+Hitbox.BackgroundColor3 = Color3.fromRGB(0, 0, 255)
+Hitbox.Position = UDim2.new(0.114285722, 0, 0.372448981, 0)
+Hitbox.Size = UDim2.new(0, 90, 0, 40)
+Hitbox.Font = Enum.Font.SourceSans
+Hitbox.Text = "Hitbox"
+Hitbox.TextColor3 = Color3.fromRGB(0, 0, 0)
+Hitbox.TextSize = 40.000
+Hitbox.MouseButton1Down:connect(function()
+	_G.HeadSize = 20
+ 
+	_G.Disabled = true
+ 
+ 
+game:GetService('RunService').RenderStepped:connect(function()
+		if _G.Disabled then
+			for i,v in next, game:GetService('Players'):GetPlayers() do
+				if v.Name ~= game:GetService('Players').LocalPlayer.Name then
+					pcall(function()
+						v.Character.HumanoidRootPart.Size = Vector3.new(_G.HeadSize,_G.HeadSize,_G.HeadSize)
+						v.Character.HumanoidRootPart.Transparency = 0.7
+						v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Really black")
+						v.Character.HumanoidRootPart.Material = "Neon"
+						v.Character.HumanoidRootPart.CanCollide = false
+					end)
+				end
+			end
+		end
+	end)
+end)
+
+
+Tab1Section:NewButton("Fly", "Sub2Sqzee", function()
+loadstring(game:HttpGet('https://pastebin.com/raw/YSL3xKYU'))()
+    print("Clicked")
+
+end)
+
+Tab1Section:NewButton("Inf jump", "Sub2Sqzee", function()
+  local InfiniteJumpEnabled = true
+game:GetService("UserInputService").JumpRequest:connect(function()
+	if InfiniteJumpEnabled then
+		game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
+	end
+end)
+
+local Tab1 = window:NewTab("INFO")
+local Tab1Section = Tab1:NewSection("Subscribe To SqZee")
+   
+end)
